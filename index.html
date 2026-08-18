@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Uber Voice Concierge</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Realistic Interactive Map Background -->
+        <div id="map" class="map-bg"></div>
+        
+        <!-- User Profile Badge (Google Auth) -->
+        <div class="user-profile-badge" id="userProfileBadge" style="display: none;">
+            <img id="userAvatar" class="user-avatar" src="" alt="User" />
+            <span id="userName" class="user-name-text"></span>
+            <a href="/auth/logout" class="logout-btn" title="Sign Out">
+                <i data-lucide="log-out"></i>
+            </a>
+        </div>
+
+        <!-- Latency Tracker Overlay -->
+        <div class="latency-tracker" id="latencyTracker">
+            <div class="tracker-item">
+                <span class="tracker-label">Speech TTFB:</span>
+                <span class="tracker-value" id="ttfbValue">-- ms</span>
+            </div>
+        </div>
+        
+        <!-- Main UI -->
+        <main class="home-screen">
+            <!-- Search Bar -->
+            <div class="search-bar" id="searchBar">
+                <span class="search-text">Where to? <span class="placeholder">Or just ask...</span></span>
+                <button class="mic-button" id="startVoiceBtn">
+                    <i data-lucide="mic"></i>
+                </button>
+            </div>
+            
+            <!-- Bottom Navigation Mock -->
+            <div class="bottom-nav">
+                <div class="nav-item active"><i data-lucide="home"></i><span>Home</span></div>
+                <div class="nav-item"><i data-lucide="layout-grid"></i><span>Services</span></div>
+                <div class="nav-item"><i data-lucide="bookmark"></i><span>Activity</span></div>
+                <div class="nav-item"><i data-lucide="user"></i><span>Account</span></div>
+            </div>
+        </main>
+        
+        <!-- Voice Concierge Overlay (Bottom Sheet) -->
+        <div class="bottom-sheet" id="voiceSheet">
+            <div class="sheet-handle"></div>
+            
+            <div class="voice-ui">
+                <div class="waveform-container">
+                    <div class="waveform" id="waveform">
+                        <!-- Dynamic bars will be inserted here by JS -->
+                    </div>
+                </div>
+                <h2 class="status-text" id="statusText">Your AI Concierge<br>is listening...</h2>
+                <button class="close-btn" id="closeVoiceBtn">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="gemini-live.js"></script>
+    <script src="app.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.gcloudignore
+.git
+.gitignore
+node_modules/
+.env
+*.log
+deploy.sh
+test_live.py
+MEMORY.md

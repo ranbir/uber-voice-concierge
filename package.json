@@ -1,0 +1,22 @@
+{
+  "name": "uber-voice-concierge-gemini-live",
+  "version": "1.0.0",
+  "description": "Real-time Gemini 3.1 Flash Live Voice Concierge demo with WebSocket proxy for Google Cloud Run.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "google-auth-library": "^10.9.1",
+    "jsonwebtoken": "^9.0.3",
+    "ws": "^8.18.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
