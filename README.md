@@ -1,4 +1,4 @@
-# Uber Voice Concierge — Powered by Google Gemini Multimodal Live API
+# Uber Voice Concierge - Powered by Google Gemini Multimodal Live API
 
 A production-ready, ultra-low-latency bidirectional voice assistant built on **Google Gemini 3.1 Flash Live (`models/gemini-3.1-flash-live-preview`)**. 
 
